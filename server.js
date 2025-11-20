@@ -158,8 +158,13 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-    console.log(`
+// Vercel serverless 环境
+module.exports = app;
+
+// 本地开发环境
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`
 ╔═══════════════════════════════════════╗
 ║   微信公众号封面下载器服务已启动      ║
 ╚═══════════════════════════════════════╝
@@ -168,5 +173,6 @@ app.listen(PORT, () => {
 📱 打开浏览器访问上述地址即可使用
 
 按 Ctrl+C 停止服务
-    `);
-});
+        `);
+    });
+}
