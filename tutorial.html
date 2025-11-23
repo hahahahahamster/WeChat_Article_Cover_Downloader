@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>微信文章链接复制教程 - 微信公众号封面下载神器</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #FFB6D9 0%, #D299FF 35%, #A0D8F1 70%, #7FE9DE 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(192, 132, 252, 0.2);
+        }
+
+        .header h1 {
+            background: linear-gradient(135deg, #FF6B9D 0%, #C084FC 50%, #60D5DD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #C084FC;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+            color: #FF6B9D;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #5a4f76;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 24px;
+            background: linear-gradient(135deg, #FF6B9D 0%, #60D5DD 100%);
+            border-radius: 3px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(192, 132, 252, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: rgba(192, 132, 252, 0.4);
+            box-shadow: 0 8px 24px rgba(192, 132, 252, 0.15);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #FF6B9D 0%, #C084FC 50%, #60D5DD 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+
+        .step-title {
+            font-size: 20px;
+            color: #5a4f76;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-content {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .tutorial-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            display: block;
+            border: 2px solid rgba(192, 132, 252, 0.2);
+        }
+
+        .highlight-box {
+            background: linear-gradient(145deg, rgba(255, 229, 240, 0.65), rgba(217, 245, 255, 0.8));
+            border-left: 4px solid #C084FC;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .highlight-box strong {
+            color: #5a4f76;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .tutorial-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← 返回首页</a>
+        
+        <div class="header">
+            <h1>📱 微信文章链接复制教程</h1>
+            <p>轻松获取微信公众号文章链接，一键提取封面图</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">电脑版教程</h2>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    <span>打开微信公众号文章</span>
+                </div>
+                <p class="step-content">在电脑浏览器中打开你想要提取封面的微信公众号文章。</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    <span>找到文章右上角的三个点图标</span>
+                </div>
+                <p class="step-content">在文章标题或页面右上角，找到三个点的图标（⋯）。</p>
+                <img src="/文章右上角三个点图标.png" alt="文章右上角三个点图标" class="tutorial-image">
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    <span>点击"复制链接"</span>
+                </div>
+                <p class="step-content">点击三个点图标后，在弹出的菜单中选择"复制链接"选项。</p>
+                <img src="/电脑版复制链接.png" alt="电脑版复制链接" class="tutorial-image">
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    <span>粘贴到封面下载器</span>
+                </div>
+                <p class="step-content">将复制的链接粘贴到本网站的输入框中，点击"解析封面"即可获取高清封面图。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">手机版教程</h2>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    <span>打开微信公众号文章</span>
+                </div>
+                <p class="step-content">在微信中打开你想要提取封面的公众号文章。</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    <span>点击右上角三个点</span>
+                </div>
+                <p class="step-content">在文章页面右上角，点击三个点的图标（⋯）。</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    <span>选择"复制链接"</span>
+                </div>
+                <p class="step-content">在弹出的菜单中找到并点击"复制链接"按钮。</p>
+                <img src="/手机版复制链接.jpg" alt="手机版复制链接" class="tutorial-image">
+            </div>
+
+            <div class="step-card">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    <span>粘贴并解析</span>
+                </div>
+                <p class="step-content">将复制的链接粘贴到本网站的输入框中，点击"解析封面"即可获取高清封面图。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>💡 温馨提示：</strong>
+            <ul style="margin-top: 10px; padding-left: 20px; line-height: 2;">
+                <li>确保文章链接包含完整的 <code style="background: rgba(192, 132, 252, 0.2); padding: 2px 6px; border-radius: 4px;">https://</code> 前缀</li>
+                <li>链接格式应为：<code style="background: rgba(192, 132, 252, 0.2); padding: 2px 6px; border-radius: 4px;">https://mp.weixin.qq.com/s/xxxxx</code></li>
+                <li>如果解析失败，请确认文章已发布且可正常访问</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

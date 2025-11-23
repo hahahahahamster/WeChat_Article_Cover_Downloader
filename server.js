@@ -290,6 +290,11 @@ print(response.json())`
     });
 });
 
+// 教程页面路由
+app.get('/tutorial', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tutorial.html'));
+});
+
 // 主页路由
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
