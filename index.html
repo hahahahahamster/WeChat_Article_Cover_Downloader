@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="微信公众号封面下载神器 - 一键下载微信公众号文章封面图，在线封面提取工具，无需软件即可提取高清封面图。提供完整的封面图下载指南，支持一键提取封面图，免费在线使用。">
-    <meta name="keywords" content="微信公众号封面下载, 微信封面提取, 封面图提取, 封面图下载, 一键下载, 一键提取, 在线封面提取, 无需软件, 如何下载封面, 封面下载指南, 封面提取神器, wechat cover downloader">
+    <meta name="description"
+        content="微信公众号封面下载神器 - 一键下载微信公众号文章封面图，在线封面提取工具，无需软件即可提取高清封面图。提供完整的封面图下载指南，支持一键提取封面图，免费在线使用。">
+    <meta name="keywords"
+        content="微信公众号封面下载, 微信封面提取, 封面图提取, 封面图下载, 一键下载, 一键提取, 在线封面提取, 无需软件, 如何下载封面, 封面下载指南, 封面提取神器, wechat cover downloader">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="微信公众号封面下载神器 - 一键提取封面图">
     <meta property="og:description" content="在线封面提取工具，一键下载微信公众号文章封面图，无需软件即可提取高清封面图。提供完整的封面图下载指南。">
@@ -220,6 +223,7 @@
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -275,8 +279,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .panel-title {
@@ -476,6 +485,7 @@
     }
     </script>
 </head>
+
 <body>
     <main class="page-wrapper">
         <section class="container" aria-labelledby="pageTitle">
@@ -491,13 +501,8 @@
                         <div class="input-group">
                             <label for="urlInput">粘贴微信公众号文章链接：</label>
                             <div class="input-wrapper">
-                                <input
-                                    type="text"
-                                    id="urlInput"
-                                    placeholder="例如: https://mp.weixin.qq.com/s/xxxxx"
-                                    autocomplete="url"
-                                    inputmode="url"
-                                >
+                                <input type="text" id="urlInput" placeholder="例如: https://mp.weixin.qq.com/s/xxxxx"
+                                    autocomplete="url" inputmode="url">
                                 <button class="clear-btn" id="clearBtn" type="button" aria-label="清空输入">×</button>
                             </div>
                         </div>
@@ -532,7 +537,7 @@
                         <li>如遇失败，请确认文章已发布且可正常访问</li>
                         <li>可在手机或电脑端直接下载保存封面图片</li>
                         <li style="border-top: 2px solid rgba(192, 132, 252, 0.3); padding-top: 12px; margin-top: 8px;">
-                            <a href="/tutorial" target="_blank" class="api-link">
+                            <a href="/tutorial" class="api-link">
                                 <span class="api-icon">📖</span>
                                 <span class="api-text">
                                     <strong>微信文章链接复制教程</strong>
@@ -542,7 +547,7 @@
                             </a>
                         </li>
                         <li style="border-top: 2px solid rgba(192, 132, 252, 0.3); padding-top: 12px; margin-top: 8px;">
-                            <a href="/api/docs" target="_blank" class="api-link">
+                            <a href="/api/docs" class="api-link">
                                 <span class="api-icon">📡</span>
                                 <span class="api-text">
                                     <strong>免费API接口文档</strong>
@@ -666,9 +671,9 @@
             result.setAttribute('aria-hidden', 'false');
             // 平滑滚动到结果区域
             setTimeout(() => {
-                result.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
+                result.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
                 });
             }, 100);
         }
@@ -686,4 +691,5 @@
         });
     </script>
 </body>
+
 </html>
