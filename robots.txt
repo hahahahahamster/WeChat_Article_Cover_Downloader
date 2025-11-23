@@ -1,5 +1,18 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vxdownloader.vercel.app/sitemap.xml
+# 允许所有搜索引擎抓取
+User-agent: Googlebot
+Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+# Sitemap位置（如果后续添加sitemap.xml）
+# Sitemap: https://vxdownloader.vercel.app/sitemap.xml

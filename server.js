@@ -173,6 +173,118 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok', message: '服务运行正常' });
 });
 
+// robots.txt 路由
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+// API 文档路由
+app.get('/api/docs', (req, res) => {
+    res.json({
+        title: '微信公众号封面提取 API 文档',
+        description: '免费API，支持一键提取微信公众号文章封面图',
+        version: '1.0.0',
+        baseUrl: req.protocol + '://' + req.get('host'),
+        endpoints: {
+            parse: {
+                method: 'POST',
+                path: '/api/parse',
+                description: '解析微信公众号文章封面图',
+                request: {
+                    contentType: 'application/json',
+                    body: {
+                        url: {
+                            type: 'string',
+                            required: true,
+                            description: '微信公众号文章链接，例如: https://mp.weixin.qq.com/s/xxxxx'
+                        }
+                    },
+                    example: {
+                        url: 'https://mp.weixin.qq.com/s/xxxxx'
+                    }
+                },
+                response: {
+                    success: {
+                        status: 200,
+                        body: {
+                            success: true,
+                            coverUrl: 'string (base64图片数据或图片URL)',
+                            originalUrl: 'string (原始文章URL)',
+                            imageUrl: 'string (原始图片URL，如果coverUrl是base64)'
+                        },
+                        example: {
+                            success: true,
+                            coverUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...',
+                            originalUrl: 'https://mp.weixin.qq.com/s/xxxxx',
+                            imageUrl: 'https://mmbiz.qpic.cn/.../0'
+                        }
+                    },
+                    error: {
+                        status: [400, 404, 408, 500],
+                        body: {
+                            error: 'string (错误信息)'
+                        },
+                        examples: [
+                            { status: 400, error: '请提供文章URL' },
+                            { status: 400, error: '请提供有效的微信公众号文章链接' },
+                            { status: 404, error: '未能找到文章封面，请确认链接是否正确' },
+                            { status: 408, error: '请求超时，请重试' },
+                            { status: 500, error: '解析失败，请检查链接是否正确或稍后重试' }
+                        ]
+                    }
+                },
+                usage: {
+                    curl: `curl -X POST ${req.protocol}://${req.get('host')}/api/parse \\
+  -H "Content-Type: application/json" \\
+  -d '{"url": "https://mp.weixin.qq.com/s/xxxxx"}'`,
+                    javascript: `fetch('${req.protocol}://${req.get('host')}/api/parse', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    url: 'https://mp.weixin.qq.com/s/xxxxx'
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));`,
+                    python: `import requests
+
+response = requests.post('${req.protocol}://${req.get('host')}/api/parse', json={
+    'url': 'https://mp.weixin.qq.com/s/xxxxx'
+})
+print(response.json())`
+                },
+                rateLimit: '无限制，免费使用',
+                notes: [
+                    'API完全免费，无需注册或API密钥',
+                    '支持所有微信公众号已发布的文章',
+                    '返回的coverUrl可能是base64格式（推荐）或原始图片URL',
+                    '建议使用base64格式的coverUrl，可绕过防盗链限制'
+                ]
+            },
+            health: {
+                method: 'GET',
+                path: '/health',
+                description: '健康检查接口',
+                response: {
+                    status: 200,
+                    body: {
+                        status: 'ok',
+                        message: '服务运行正常'
+                    }
+                }
+            }
+        },
+        support: {
+            github: 'https://github.com/hahahahahamster/WeChat_Article_Cover_Downloader',
+            issues: '如有问题，请在GitHub提交Issue'
+        }
+    });
+});
+
 // 主页路由
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
