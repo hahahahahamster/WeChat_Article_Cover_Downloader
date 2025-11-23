@@ -10,7 +10,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-// 静态文件服务，添加缓存头
+// 静态文件服务，添加缓存头（必须在路由之前）
 app.use(express.static(__dirname, {
     maxAge: '1y', // 图片和静态资源缓存1年
     etag: true,
@@ -177,6 +177,22 @@ app.get('/health', (req, res) => {
 app.get('/robots.txt', (req, res) => {
     res.type('text/plain');
     res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+// 图片文件路由（处理中文文件名，支持URL编码和原始路径）
+app.get('/文章右上角三个点图标.png', (req, res) => {
+    res.type('image/png');
+    res.sendFile(path.join(__dirname, '文章右上角三个点图标.png'));
+});
+
+app.get('/电脑版复制链接.png', (req, res) => {
+    res.type('image/png');
+    res.sendFile(path.join(__dirname, '电脑版复制链接.png'));
+});
+
+app.get('/手机版复制链接.jpg', (req, res) => {
+    res.type('image/jpeg');
+    res.sendFile(path.join(__dirname, '手机版复制链接.jpg'));
 });
 
 // API 文档路由
