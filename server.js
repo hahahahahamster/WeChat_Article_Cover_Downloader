@@ -181,6 +181,11 @@ app.get('/robots.txt', (req, res) => {
 
 // API 文档路由
 app.get('/api/docs', (req, res) => {
+    res.sendFile(path.join(__dirname, 'api-docs.html'));
+});
+
+// API 文档 JSON 接口（保留用于程序化访问）
+app.get('/api/docs.json', (req, res) => {
     res.json({
         title: '微信公众号封面提取 API 文档',
         description: '免费API，支持一键提取微信公众号文章封面图',

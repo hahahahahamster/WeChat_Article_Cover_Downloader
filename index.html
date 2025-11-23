@@ -20,7 +20,10 @@
     <meta name="twitter:description" content="在线封面提取工具，一键下载微信公众号文章封面图，无需软件即可提取高清封面图。">
     <meta name="twitter:image" content="https://vxdownloader.vercel.app/favicon.png">
     <title>微信公众号封面下载神器 - 一键提取封面图，在线无需软件</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <style>
         * {
             margin: 0;
@@ -320,6 +323,63 @@
             color: #C084FC;
         }
 
+        .api-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(192, 132, 252, 0.1) 50%, rgba(96, 213, 221, 0.1) 100%);
+            border-radius: 12px;
+            text-decoration: none;
+            color: #5a4f76;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(192, 132, 252, 0.2);
+            margin-top: 8px;
+        }
+
+        .api-link:hover {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(192, 132, 252, 0.15) 50%, rgba(96, 213, 221, 0.15) 100%);
+            border-color: rgba(192, 132, 252, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(192, 132, 252, 0.2);
+        }
+
+        .api-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .api-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .api-text strong {
+            color: #C084FC;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .api-desc {
+            font-size: 12px;
+            color: #888;
+            font-weight: normal;
+        }
+
+        .api-arrow {
+            color: #C084FC;
+            font-size: 18px;
+            font-weight: bold;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .api-link:hover .api-arrow {
+            transform: translateX(4px);
+        }
+
         @media (min-width: 900px) {
             body {
                 align-items: center;
@@ -472,8 +532,14 @@
                         <li>如遇失败，请确认文章已发布且可正常访问</li>
                         <li>可在手机或电脑端直接下载保存封面图片</li>
                         <li style="border-top: 2px solid rgba(192, 132, 252, 0.3); padding-top: 12px; margin-top: 8px;">
-                            <a href="/api/docs" target="_blank" style="color: #C084FC; text-decoration: none; font-weight: 600;">📡 免费API接口文档 →</a>
-                            <span style="display: block; font-size: 12px; color: #888; margin-top: 4px;">开发者可调用API实现封面提取功能</span>
+                            <a href="/api/docs" target="_blank" class="api-link">
+                                <span class="api-icon">📡</span>
+                                <span class="api-text">
+                                    <strong>免费API接口文档</strong>
+                                    <span class="api-desc">开发者可调用API实现封面提取功能</span>
+                                </span>
+                                <span class="api-arrow">→</span>
+                            </a>
                         </li>
                     </ul>
                 </aside>
