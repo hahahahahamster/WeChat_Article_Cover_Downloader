@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>API 文档 - 微信公众号封面提取</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="./favicon-optimized.png">
     <style>
         * {
             margin: 0;
@@ -274,10 +275,11 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <a href="/" class="back-link">← 返回首页</a>
-        
+
         <div class="header">
             <h1>📡 微信公众号封面提取 API</h1>
             <p>免费API，支持一键提取微信公众号文章封面图</p>
@@ -316,7 +318,7 @@
                 </div>
 
                 <h3 style="margin: 20px 0 10px 0; color: #5a4f76; font-size: 18px;">代码示例</h3>
-                
+
                 <div style="margin-bottom: 15px;">
                     <div class="code-block-header">
                         <span class="code-label">cURL</span>
@@ -354,12 +356,14 @@
                         <button class="copy-btn" onclick="copyCode('successResponse')">复制</button>
                     </div>
                     <div class="response-example" id="successResponse">
-{
-  <span class="key">"success"</span>: <span class="boolean">true</span>,
-  <span class="key">"coverUrl"</span>: <span class="string">"data:image/jpeg;base64,/9j/4AAQSkZJRg..."</span>,
-  <span class="key">"originalUrl"</span>: <span class="string">"https://mp.weixin.qq.com/s/xxxxx"</span>,
-  <span class="key">"imageUrl"</span>: <span class="string">"https://mmbiz.qpic.cn/.../0"</span>
-}
+                        {
+                        <span class="key">"success"</span>: <span class="boolean">true</span>,
+                        <span class="key">"coverUrl"</span>: <span
+                            class="string">"data:image/jpeg;base64,/9j/4AAQSkZJRg..."</span>,
+                        <span class="key">"originalUrl"</span>: <span
+                            class="string">"https://mp.weixin.qq.com/s/xxxxx"</span>,
+                        <span class="key">"imageUrl"</span>: <span class="string">"https://mmbiz.qpic.cn/.../0"</span>
+                        }
                     </div>
                 </div>
 
@@ -370,9 +374,9 @@
                         <button class="copy-btn" onclick="copyCode('errorResponse')">复制</button>
                     </div>
                     <div class="response-example" id="errorResponse">
-{
-  <span class="key">"error"</span>: <span class="string">"请提供文章URL"</span>
-}
+                        {
+                        <span class="key">"error"</span>: <span class="string">"请提供文章URL"</span>
+                        }
                     </div>
                 </div>
 
@@ -402,10 +406,10 @@
                         <button class="copy-btn" onclick="copyCode('healthResponse')">复制</button>
                     </div>
                     <div class="response-example" id="healthResponse">
-{
-  <span class="key">"status"</span>: <span class="string">"ok"</span>,
-  <span class="key">"message"</span>: <span class="string">"服务运行正常"</span>
-}
+                        {
+                        <span class="key">"status"</span>: <span class="string">"ok"</span>,
+                        <span class="key">"message"</span>: <span class="string">"服务运行正常"</span>
+                        }
                     </div>
                 </div>
             </div>
@@ -414,7 +418,8 @@
         <div class="section">
             <h2 class="section-title">支持</h2>
             <div class="info-box">
-                <strong>GitHub:</strong> <a href="https://github.com/hahahahahamster/WeChat_Article_Cover_Downloader" target="_blank" style="color: #C084FC; text-decoration: none;">查看源码</a><br>
+                <strong>GitHub:</strong> <a href="https://github.com/hahahahahamster/WeChat_Article_Cover_Downloader"
+                    target="_blank" style="color: #C084FC; text-decoration: none;">查看源码</a><br>
                 <strong>问题反馈:</strong> 如有问题，请在GitHub提交Issue
             </div>
         </div>
@@ -456,7 +461,7 @@ print(response.json())`;
         function copyCode(elementId) {
             const element = document.getElementById(elementId);
             const text = element.textContent || element.innerText;
-            
+
             // 创建临时文本区域
             const textarea = document.createElement('textarea');
             textarea.value = text;
@@ -464,7 +469,7 @@ print(response.json())`;
             textarea.style.opacity = '0';
             document.body.appendChild(textarea);
             textarea.select();
-            
+
             try {
                 document.execCommand('copy');
                 // 显示复制成功反馈
@@ -472,7 +477,7 @@ print(response.json())`;
                 const originalText = btn.textContent;
                 btn.textContent = '已复制!';
                 btn.classList.add('copied');
-                
+
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.classList.remove('copied');
@@ -480,10 +485,10 @@ print(response.json())`;
             } catch (err) {
                 console.error('复制失败:', err);
             }
-            
+
             document.body.removeChild(textarea);
         }
     </script>
 </body>
-</html>
 
+</html>
