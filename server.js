@@ -9,7 +9,27 @@ const PORT = 3001;
 // 中间件
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
+
+// 静态文件服务，添加缓存头
+app.use(express.static(__dirname, {
+    maxAge: '1y', // 图片和静态资源缓存1年
+    etag: true,
+    lastModified: true,
+    setHeaders: (res, path) => {
+        // 为图片文件设置更长的缓存时间
+        if (path.match(/\.(jpg|jpeg|png|gif|webp|svg|ico)$/i)) {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+        // 为CSS和JS文件设置缓存
+        if (path.match(/\.(css|js)$/i)) {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        }
+        // 为HTML文件设置较短的缓存时间
+        if (path.match(/\.html$/i)) {
+            res.setHeader('Cache-Control', 'public, max-age=3600');
+        }
+    }
+}));
 
 // 解析微信公众号封面接口
 app.post('/api/parse', async (req, res) => {

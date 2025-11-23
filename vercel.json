@@ -15,6 +15,39 @@
       "src": "/(.*)",
       "dest": "/server.js"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*\\.(jpg|jpeg|png|gif|webp|svg|ico|css|js))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.vxdownloader.vercel.app"
+        }
+      ],
+      "destination": "https://vxdownloader.vercel.app/$1",
+      "permanent": true
+    }
   ]
 }
 

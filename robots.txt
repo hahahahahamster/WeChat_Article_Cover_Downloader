@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vxdownloader.vercel.app/sitemap.xml
+
